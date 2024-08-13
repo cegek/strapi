@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_mornings",
+  "info": {
+    "singularName": "business-morning",
+    "pluralName": "business-mornings",
+    "displayName": "businessMorning",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

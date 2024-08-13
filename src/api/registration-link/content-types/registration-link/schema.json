@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "registration_links",
+  "info": {
+    "singularName": "registration-link",
+    "pluralName": "registration-links",
+    "displayName": "registrationLink"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
