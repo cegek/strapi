@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact-form",
     "pluralName": "contact-forms",
-    "displayName": "contactForm"
+    "displayName": "contactForm",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,12 @@
     "phone": {
       "type": "string",
       "required": true
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
     }
   }
 }

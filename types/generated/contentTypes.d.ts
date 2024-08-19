@@ -891,6 +891,7 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
     singularName: 'contact-form';
     pluralName: 'contact-forms';
     displayName: 'contactForm';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -899,6 +900,8 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
     email: Attribute.Email & Attribute.Required;
     message: Attribute.Text;
     phone: Attribute.String & Attribute.Required;
+    firstName: Attribute.String;
+    lastName: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
