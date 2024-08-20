@@ -810,6 +810,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'oneToOne',
       'api::category.category'
     >;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,6 +921,36 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiCookiePolicyCookiePolicy extends Schema.SingleType {
+  collectionName: 'cookie_policies';
+  info: {
+    singularName: 'cookie-policy';
+    pluralName: 'cookie-policies';
+    displayName: 'CookiePolicy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cookie-policy.cookie-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cookie-policy.cookie-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Schema.CollectionType {
   collectionName: 'events';
   info: {
@@ -937,6 +968,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     date: Attribute.Date & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     shortDescription: Attribute.RichText;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -978,6 +1010,7 @@ export interface ApiMemberMember extends Schema.CollectionType {
     website: Attribute.String;
     facebook: Attribute.String;
     instagram: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -989,6 +1022,36 @@ export interface ApiMemberMember extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'PrivacyPolicy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
       'oneToOne',
       'admin::user'
     > &
@@ -1026,6 +1089,36 @@ export interface ApiRegistrationLinkRegistrationLink extends Schema.SingleType {
   };
 }
 
+export interface ApiTermAndConditionTermAndCondition extends Schema.SingleType {
+  collectionName: 'term_and_conditions';
+  info: {
+    singularName: 'term-and-condition';
+    pluralName: 'term-and-conditions';
+    displayName: 'TermAndCondition';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::term-and-condition.term-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::term-and-condition.term-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1048,9 +1141,12 @@ declare module '@strapi/types' {
       'api::business-morning.business-morning': ApiBusinessMorningBusinessMorning;
       'api::category.category': ApiCategoryCategory;
       'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::cookie-policy.cookie-policy': ApiCookiePolicyCookiePolicy;
       'api::event.event': ApiEventEvent;
       'api::member.member': ApiMemberMember;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::registration-link.registration-link': ApiRegistrationLinkRegistrationLink;
+      'api::term-and-condition.term-and-condition': ApiTermAndConditionTermAndCondition;
     }
   }
 }

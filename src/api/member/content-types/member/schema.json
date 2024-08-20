@@ -36,12 +36,12 @@
       "type": "string"
     },
     "companyIcon": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "email": {
       "type": "email"
@@ -57,6 +57,11 @@
     },
     "instagram": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
