@@ -811,6 +811,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'api::category.category'
     >;
     seo: Attribute.Component<'shared.seo'>;
+    slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -969,6 +970,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     image: Attribute.Media & Attribute.Required;
     shortDescription: Attribute.RichText;
     seo: Attribute.Component<'shared.seo'>;
+    slug: Attribute.UID<'api::event.event', 'title'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
