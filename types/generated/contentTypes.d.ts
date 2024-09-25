@@ -1013,6 +1013,7 @@ export interface ApiMemberMember extends Schema.CollectionType {
     facebook: Attribute.String;
     instagram: Attribute.String;
     seo: Attribute.Component<'shared.seo'>;
+    slug: Attribute.UID<'api::member.member', 'name'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
