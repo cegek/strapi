@@ -9,7 +9,7 @@ module.exports = {
 
     try {
       await strapi.plugins["email"].services.email.send({
-        to: "adorjan.demeny@prismasolutions.ro",
+        to: "mastartverseny2021@gmail.com",
         from: "no-reply@mastart.ro",
         subject: "Contact Form",
         html: `
