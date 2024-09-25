@@ -22,7 +22,7 @@ module.exports = ({ env }) => ({
     config: {
       provider: "nodemailer",
       providerOptions: {
-        host: "mail.smart-card.io",
+        host: "mail.mastart.ro",
         secure: false,
         port: 587,
         tls: {
@@ -31,8 +31,8 @@ module.exports = ({ env }) => ({
         },
         requireTLS: true,
         auth: {
-          user: "noreply@smart-card.io",
-          pass: "PrismaDev2020!",
+          user: "no-reply@mastart.ro",
+          pass: "{+vCCfCwqze&",
         },
       },
       // providerOptions: {
@@ -41,8 +41,8 @@ module.exports = ({ env }) => ({
       //   ignoreTLS: true,
       // },
       settings: {
-        defaultFrom: "noreply@smart-card.io",
-        defaultReplyTo: "noreply@smart-card.io",
+        defaultFrom: "no-reply@mastart.ro",
+        defaultReplyTo: "no-reply@mastart.ro",
       },
     },
   },

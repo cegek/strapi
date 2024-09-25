@@ -9,8 +9,8 @@ module.exports = {
 
     try {
       await strapi.plugins["email"].services.email.send({
-        to: "mastartverseny2021@gmail.com",
-        from: "noreply@smart-card.io",
+        to: "adorjan.demeny@prismasolutions.ro",
+        from: "no-reply@mastart.ro",
         subject: "Contact Form",
         html: `
           Name: ${firstName + lastName}<br>
