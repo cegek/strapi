@@ -971,6 +971,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     shortDescription: Attribute.RichText;
     seo: Attribute.Component<'shared.seo'>;
     slug: Attribute.UID<'api::event.event', 'title'> & Attribute.Required;
+    featured: Attribute.Enumeration<['upcoming', 'past event']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'past event'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
