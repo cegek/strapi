@@ -839,6 +839,9 @@ export interface ApiBusinessMorningBusinessMorning
     description: Attribute.RichText & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     date: Attribute.Date;
+    featured: Attribute.Enumeration<['featured', 'simple']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'simple'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -30,6 +30,15 @@
     },
     "date": {
       "type": "date"
+    },
+    "featured": {
+      "type": "enumeration",
+      "enum": [
+        "featured",
+        "simple"
+      ],
+      "default": "simple",
+      "required": true
     }
   }
 }
