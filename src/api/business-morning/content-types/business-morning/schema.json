@@ -29,7 +29,8 @@
       ]
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "featured": {
       "type": "enumeration",

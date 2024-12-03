@@ -879,7 +879,7 @@ export interface ApiBusinessMorningBusinessMorning
     title: Attribute.String & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
-    date: Attribute.Date;
+    date: Attribute.Date & Attribute.Required;
     featured: Attribute.Enumeration<['featured', 'simple']> &
       Attribute.Required &
       Attribute.DefaultTo<'simple'>;
