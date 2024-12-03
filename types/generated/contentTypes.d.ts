@@ -788,6 +788,47 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiApplicationApplication extends Schema.CollectionType {
+  collectionName: 'applications';
+  info: {
+    singularName: 'application';
+    pluralName: 'applications';
+    displayName: 'Application';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fullName: Attribute.String & Attribute.Required;
+    placeOfBirth: Attribute.String & Attribute.Required;
+    dateOfBirth: Attribute.Date & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    companyName: Attribute.String & Attribute.Required;
+    registerNumber: Attribute.String & Attribute.Required;
+    companyAddress: Attribute.Text & Attribute.Required;
+    taxNumber: Attribute.String & Attribute.Required;
+    representative: Attribute.Text & Attribute.Required;
+    mailingAddress: Attribute.Text & Attribute.Required;
+    whereDidYouFindUs: Attribute.String;
+    otherContactOptions: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::application.application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::application.application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -1146,6 +1187,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::application.application': ApiApplicationApplication;
       'api::blog.blog': ApiBlogBlog;
       'api::business-morning.business-morning': ApiBusinessMorningBusinessMorning;
       'api::category.category': ApiCategoryCategory;
