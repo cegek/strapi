@@ -4,7 +4,8 @@
   "info": {
     "singularName": "application",
     "pluralName": "applications",
-    "displayName": "Application"
+    "displayName": "Application",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -41,7 +42,8 @@
     },
     "taxNumber": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "representative": {
       "type": "text",

@@ -47,6 +47,21 @@ export interface MemberMember extends Schema.Component {
   };
 }
 
+export interface SharedButton extends Schema.Component {
+  collectionName: 'components_shared_buttons';
+  info: {
+    displayName: 'Button';
+    icon: 'cursor';
+  };
+  attributes: {
+    text: Attribute.String;
+    link: Attribute.String & Attribute.Required;
+    style: Attribute.Enumeration<['primary', 'secondary']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'primary'>;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -104,6 +119,7 @@ declare module '@strapi/types' {
       'blog.blog': BlogBlog;
       'business-morning.business-mornings': BusinessMorningBusinessMornings;
       'member.member': MemberMember;
+      'shared.button': SharedButton;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }

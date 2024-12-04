@@ -794,6 +794,7 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
     singularName: 'application';
     pluralName: 'applications';
     displayName: 'Application';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -806,7 +807,7 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
     companyName: Attribute.String & Attribute.Required;
     registerNumber: Attribute.String & Attribute.Required;
     companyAddress: Attribute.Text & Attribute.Required;
-    taxNumber: Attribute.String & Attribute.Required;
+    taxNumber: Attribute.String & Attribute.Required & Attribute.Unique;
     representative: Attribute.Text & Attribute.Required;
     mailingAddress: Attribute.Text & Attribute.Required;
     whereDidYouFindUs: Attribute.String;
@@ -883,6 +884,7 @@ export interface ApiBusinessMorningBusinessMorning
     featured: Attribute.Enumeration<['featured', 'simple']> &
       Attribute.Required &
       Attribute.DefaultTo<'simple'>;
+    ctaButton: Attribute.Component<'shared.button'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1018,6 +1020,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     featured: Attribute.Enumeration<['upcoming', 'past event']> &
       Attribute.Required &
       Attribute.DefaultTo<'past event'>;
+    ctaButton: Attribute.Component<'shared.button'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
